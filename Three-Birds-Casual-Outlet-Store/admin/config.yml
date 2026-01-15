@@ -1,15 +1,11 @@
-# Admin Hub Config for Three Birds Casual
+#backend:
+  name: git-gateway
+  branch: main
 
-backend:
-  name: git-gateway       # Use Netlify Git Gateway
-  branch: main            # The branch you deploy from
-
-media_folder: "images/uploads"  # Where uploaded images go
+media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-# Collections define editable content types
 collections:
-
   - name: "pages"
     label: "Pages"
     files:
