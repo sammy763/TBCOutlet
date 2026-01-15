@@ -1,0 +1,56 @@
+# Admin Hub Config for Three Birds Casual
+
+backend:
+  name: git-gateway       # Use Netlify Git Gateway
+  branch: main            # The branch you deploy from
+
+media_folder: "images/uploads"  # Where uploaded images go
+public_folder: "/images/uploads"
+
+# Collections define editable content types
+collections:
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "content/pages/home.json"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+
+      - label: "About Page"
+        name: "about"
+        file: "content/pages/about.json"
+        fields:
+          - { label: "About Text", name: "aboutText", widget: "text" }
+
+      - label: "Contact Page"
+        name: "contact"
+        file: "content/pages/contact.json"
+        fields:
+          - { label: "Contact Name Placeholder", name: "contactName", widget: "string" }
+          - { label: "Contact Email Placeholder", name: "contactEmail", widget: "string" }
+          - { label: "Contact Message Placeholder", name: "contactMessage", widget: "text" }
+
+  - name: "collections"
+    label: "Collections"
+    folder: "content/collections"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Collection Name", name: "title", widget: "string" }
+      - { label: "Collection Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
+
+  - name: "products"
+    label: "Products"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Product Name", name: "title", widget: "string" }
+      - { label: "Collection", name: "collection", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
